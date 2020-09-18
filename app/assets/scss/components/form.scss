@@ -1,0 +1,12 @@
+/**
+ * components/form.scss
+ */
+
+.form-error-message {
+  color: var(--mdc-theme-error);
+  margin: 1em 0;
+}
+
+.form-item-container .text-field {
+  display: block;
+}

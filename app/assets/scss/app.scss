@@ -1,0 +1,19 @@
+/**
+ * app.scss
+ */
+
+/* Import Global Configs */
+@import './variables';
+@import './functions';
+@import './mixins';
+
+/* Import Base Styles */
+@import './base';
+
+/* Import Material Components */
+@import './material-components-web';
+
+/* Import Layout Components */
+
+/* Import UI Components */
+@import './components/form';

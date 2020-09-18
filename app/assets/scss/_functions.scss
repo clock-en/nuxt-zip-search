@@ -1,0 +1,19 @@
+/** 
+ * _functions.scss
+ */
+
+/* Get min breakpoint */
+@function get-min-breakpoint($device) {
+  $min: map-get($breakpoints, $device);
+
+  @return if($min > 0, $min, null);
+}
+
+/* Get max breakpoint */
+@function get-max-breakpoint($device) {
+  $names: map-keys($breakpoints);
+  $n: index($names, $device);
+  $prev: if($n > 1, nth($names, $n - 1), null);
+
+  @return if($prev, (get-min-breakpoint($prev) - 1px), null);
+}

@@ -1,0 +1,95 @@
+/** 
+ * _base.scss
+ */
+
+/* Import Normalize */
+@import 'normalize-scss/sass/normalize';
+@include normalize();
+
+/* Set Variables */
+html {
+  --mdc-typography-font-family: $sans-serif;
+}
+
+/* Styles for Website */
+html {
+  font-family: $sans-serif;
+  word-spacing: 1px;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+
+body,
+input,
+select,
+textarea,
+button {
+  font-family: $sans-serif;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+img {
+  width: auto;
+  max-width: 100%;
+  vertical-align: bottom;
+}
+
+/**
+ * レイアウト
+ */
+.page-content {
+  display: grid;
+}
+.sidebar {
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+    0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+@include get-max-media-query(tablet) {
+  .main,
+  .sidebar {
+    padding: 1rem;
+  }
+  .main {
+    grid-row: 2 / 3;
+    padding-top: 2em;
+  }
+  .sidebar {
+    grid-row: 1 / 2;
+  }
+}
+@include get-media-query(desktop) {
+  .page-content {
+    grid-template-columns: 250px 1fr;
+    min-height: 100vh;
+  }
+  .main,
+  .sidebar {
+    grid-row: 1 / 2;
+    padding: 2rem;
+  }
+  .main {
+    grid-column: 2 / 3;
+  }
+  .sidebar {
+    grid-column: 1 / 2;
+    box-shadow: 0 3px 3px -2px rgba(0, 0, 0, 0.2),
+      0 3px 4px 0 rgba(0, 0, 0, 0.14), 0 1px 8px 0 rgba(0, 0, 0, 0.12);
+  }
+}
+
+.main > *:first-child,
+.sidebar > *:first-child {
+  margin-top: 0 !important;
+}
+.main > *:last-child,
+.sidebar > *:last-child {
+  margin-bottom: 0 !important;
+}
